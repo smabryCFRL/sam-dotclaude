@@ -1,4 +1,5 @@
-# dotclaude PreToolUse guard (Windows). Exit code 2 = block the tool call.
+# dotclaude PreToolUse guard (Windows) — a backstop against obvious footguns (NOT a sandbox).
+# Exit code 2 = block the tool call.
 $raw = [Console]::In.ReadToEnd()
 try { $j = $raw | ConvertFrom-Json } catch { exit 0 }
 
@@ -9,8 +10,10 @@ if (-not $path) { $path = $j.tool_input.path }
 function Block($m) { [Console]::Error.WriteLine("dotclaude guard: $m"); exit 2 }
 
 if ($cmd) {
-  if ($cmd -match 'rm\s+-rf\s+[/~]')                 { Block "refusing rm -rf on a root/home path" }
-  if ($cmd -match 'git\s+push.*(--force|\s-f\b)')    { Block "refusing force-push to a shared branch" }
+  # rm -rf targeting / /* ~ (deep paths allowed)
+  if ($cmd -match 'rm\s+-[rf]+\s+(/|/\*|~)(\s|$)') { Block "refusing rm -rf on a root/home path" }
+  # force-push, but allow the safe --force-with-lease
+  if ($cmd -match 'git\s+push' -and $cmd -match '(--force(?!-with-lease)|\s-f(\s|$))') { Block "refusing force-push to a shared branch" }
   if ($cmd -match 'Remove-Item.*-Recurse.*-Force.*[\\/]\s*$') { Block "refusing recursive force-delete of a root path" }
 }
 if ($path) {
