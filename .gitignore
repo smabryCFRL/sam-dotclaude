@@ -1,0 +1,12 @@
+# Personal / machine-specific — never commit (these stay on each person's machine)
+CLAUDE.local.md
+settings.local.json
+*.local.md
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+
+# Backups created by the install scripts
+_pre-dotclaude-backup-*/

@@ -1,0 +1,19 @@
+# Personal / machine-specific overrides
+#
+# Copy this file to `CLAUDE.local.md` (gitignored) and fill in your details.
+# The install script does this automatically if `CLAUDE.local.md` is missing.
+
+## Working areas (this machine)
+- Personal projects: ~/Developer/Personal
+- Work projects:     ~/Developer/<org>
+
+## Identity
+- Git author name / email: <Your Name> <you@example.com>
+
+## Investigation / OSINT specifics (optional — delete if N/A)
+- Isolated browser profile: <path to hardened profile>
+- Egress: <proxy> via <extension>, under <VPN>
+- Launch alias: <alias>
+
+## Other local overrides
+- Local dev ports, secret *locations* (paths only, never values), machine quirks.
