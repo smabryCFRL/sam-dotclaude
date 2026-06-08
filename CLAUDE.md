@@ -18,6 +18,16 @@
 - Simple, preventable mistakes (typos, wrong schema, guessed flags, unparsed config) are
   unacceptable — they're cheap to catch and they erode trust.
 
+## Plan first — use the tools, don't dive in (IMPORTANT)
+- For a new feature, a new project, or any nontrivial change, **plan before implementing**: use
+  **plan mode** to scope the approach first (and `superpowers:brainstorming` / `writing-plans` for
+  design-heavy work). Don't jump straight into code.
+- **Use the tooling available** instead of doing everything inline — delegate search/heavy reading to
+  subagents, pick the skill that fits, lean on plan mode and the hooks. Match the tool to the task.
+- **Know and use this setup's own skills + plugins**: `setup`, `project-init`, `new-python-project`,
+  `atlas` (the knowledge vault), plus `superpowers`, `pr-review-toolkit`, `commit-commands` — prefer
+  them over improvising.
+
 ## Working areas & project setup
 - Repos live under per-area dev roots; this machine's exact areas are in `CLAUDE.local.md`.
   State which area you're working in at session start. If it's ambiguous, ask — don't guess.
