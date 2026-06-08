@@ -12,7 +12,7 @@ and machine-specific values live in gitignored `*.local.*` files, so the repo it
 ```
 CLAUDE.md                  # lean, always-loaded rules
 rules/                     # python.md (auto-loads on Python files), git.md
-skills/                    # new-python-project, project-init, shell-environment
+skills/                    # new-python-project, project-init, shell-environment, save-note, recall-note
 hooks/                     # guard (safety), check-project-config (session nudge)   [.sh + .ps1]
 agents/                    # empty to start — built-ins + plugins cover most cases
 templates/project/.claude/ # drop-in starter for any repo
@@ -71,6 +71,18 @@ In any repo, ask Claude to run the **`project-init`** skill — and per the glob
 offers it automatically when a repo has no `.claude/` (it skips third-party repos you cloned).
 It drops `templates/project/.claude/` in and fills it out. Global rules apply everywhere
 automatically, so project files only hold project-specific guidance.
+
+## Memory vault (Obsidian)
+
+`save-note` and `recall-note` give Claude a durable, human-browsable knowledge base: frontmatter'd
+markdown files written into an Obsidian vault (plain file I/O — no MCP or service). `save-note` writes
+`<category>/<slug>.md` plus an `INDEX.md` pointer; `recall-note` searches it with ripgrep. Set the
+vault path under **Agent vault** in `CLAUDE.local.md`.
+
+This complements native auto-memory (Claude's automatic, machine-local working memory) — the vault is
+the *deliberate, curated, portable* layer you also read in Obsidian, and its backlinks/graph are strong
+for linking decisions, entities, and cases. Keep the vault **non-cloud-synced and sensitive**; never
+commit it.
 
 ## Sharing with colleagues
 

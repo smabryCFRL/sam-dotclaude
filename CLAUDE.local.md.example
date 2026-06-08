@@ -17,3 +17,6 @@
 
 ## Other local overrides
 - Local dev ports, secret *locations* (paths only, never values), machine quirks.
+
+## Agent vault (Obsidian)
+- Agent vault: <absolute path to your Obsidian vault for agent memory — a NON-cloud-synced, sensitive location>

@@ -43,3 +43,4 @@
 - `skills/new-python-project` — scaffold a Python project my way
 - `skills/project-init` — drop the `.claude/` template into the current repo
 - `skills/shell-environment` — terminal / tooling reference (on demand)
+- `skills/save-note` / `skills/recall-note` — persist & recall notes in the Obsidian agent vault (path in `CLAUDE.local.md`)
