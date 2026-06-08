@@ -10,6 +10,9 @@
   memory is a hypothesis to confirm, not a source to ship.
 - **Validate every generated artifact before claiming it works.** Parse/lint/schema-check config,
   run code or its tests, dry-run commands. JSON especially: parse *and* schema-validate.
+  **Show the evidence — the command and its output — don't just assert success.**
+- **Fix the root cause, don't suppress it.** Never silence an error, skip a test, or paper over a
+  failing check just to make something "pass."
 - **"Done" means verified.** Never report success on unverified work; if something couldn't be
   verified, say so and name exactly what's unchecked.
 - Simple, preventable mistakes (typos, wrong schema, guessed flags, unparsed config) are
