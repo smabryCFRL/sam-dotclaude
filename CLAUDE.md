@@ -4,6 +4,17 @@
 > on-demand) and in skills. Person- and machine-specific values live in `CLAUDE.local.md`
 > (gitignored). Update this file and `rules/` in the same task whenever conventions change.
 
+## Rigor — research first, verify before "done" (IMPORTANT)
+- **Don't write from memory when an authoritative source exists.** Generating against a config
+  schema, API, CLI flags, or a library? Check the real docs / JSON schema / `--help` first —
+  memory is a hypothesis to confirm, not a source to ship.
+- **Validate every generated artifact before claiming it works.** Parse/lint/schema-check config,
+  run code or its tests, dry-run commands. JSON especially: parse *and* schema-validate.
+- **"Done" means verified.** Never report success on unverified work; if something couldn't be
+  verified, say so and name exactly what's unchecked.
+- Simple, preventable mistakes (typos, wrong schema, guessed flags, unparsed config) are
+  unacceptable — they're cheap to catch and they erode trust.
+
 ## Working areas & project setup
 - Repos live under per-area dev roots; this machine's exact areas are in `CLAUDE.local.md`.
   State which area you're working in at session start. If it's ambiguous, ask — don't guess.
