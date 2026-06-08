@@ -41,9 +41,16 @@ The installer symlinks the managed items into `~/.claude/`, backing up anything 
 
 ## Personalize
 
-The installer seeds two gitignored files from their `.example` templates — edit them:
-- **`CLAUDE.local.md`** — your dev-area paths, identity, machine/investigation specifics.
+The committed files are **generic best-practice defaults** that work for any user/OS. Your personal
+and machine-specific bits live in gitignored files the installer seeds from `.example` templates —
+edit them:
+- **`CLAUDE.local.md`** — your dev-area paths, identity, machine/OS specifics.
 - **`settings.local.json`** — personal settings (e.g. `skipDangerousModePermissionPrompt`).
+- **`skills/shell-environment/SKILL.md`** — your shell, aliases, and installed tools (fill it in, or
+  let your agent build it up over time).
+
+To adapt the shared base itself: add overrides in `CLAUDE.local.md` (recommended — survives
+`git pull`), or edit the committed `CLAUDE.md` directly for your own use case if you maintain a fork.
 
 ## Plugins
 

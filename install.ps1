@@ -15,6 +15,7 @@ New-Item -ItemType Directory -Force -Path $ClaudeDir | Out-Null
 
 if (-not (Test-Path "$RepoDir\CLAUDE.local.md"))     { Copy-Item "$RepoDir\CLAUDE.local.md.example"     "$RepoDir\CLAUDE.local.md" }
 if (-not (Test-Path "$RepoDir\settings.local.json")) { Copy-Item "$RepoDir\settings.local.json.example" "$RepoDir\settings.local.json" }
+if (-not (Test-Path "$RepoDir\skills\shell-environment\SKILL.md")) { Copy-Item "$RepoDir\skills\shell-environment\SKILL.md.example" "$RepoDir\skills\shell-environment\SKILL.md" }
 
 function Link-Item($name) {
   $src = Join-Path $RepoDir $name

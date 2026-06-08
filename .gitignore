@@ -2,6 +2,8 @@
 CLAUDE.local.md
 settings.local.json
 *.local.md
+# personal shell reference — ship SKILL.md.example, keep your own SKILL.md local
+skills/shell-environment/SKILL.md
 
 # OS / editor cruft
 .DS_Store

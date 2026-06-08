@@ -1,0 +1,28 @@
+---
+name: shell-environment
+description: Reference for YOUR terminal setup — shell, aliases, installed CLI tools, plugins. Consult when running shell commands, choosing a CLI tool, or discussing the dev environment. Fill this in for your machine (or let your agent build it over time).
+---
+
+# Shell environment reference  (template — replace with your own)
+
+Copy this file to `SKILL.md` (the installer does this if it's missing) and document your environment
+so the agent stops guessing. Keep it factual and concise. Suggested structure:
+
+## OS & shell
+- OS: `<macOS / Windows / Linux>`
+- Shell: `<zsh / PowerShell / bash>` + prompt/plugin manager if any
+- Package manager: `<Homebrew / winget / scoop / apt>` + prefix/path
+
+## Aliases (interactive shell only — in Bash-tool calls use the REAL binary)
+| Alias | Real command | Notes |
+|-------|--------------|-------|
+| `ll`  | `eza -la --git` | example — replace with yours, or delete the table |
+
+> If you alias common commands (`ls`/`cat`/`find`/`grep` → modern tools), those aliases do **not**
+> apply in non-interactive Bash-tool calls — call the real binary by name.
+
+## Installed CLI tools the agent should assume you have
+- `<git, gh, ripgrep (rg), fd, jq, uv, ...>`
+
+## Shell plugins / extras
+- `<autosuggestions, syntax-highlighting, fzf, zoxide, ...>`

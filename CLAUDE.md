@@ -31,11 +31,11 @@
   project): don't add `.claude/` there unless I explicitly ask.
 
 ## Bash tool gotcha
-- My interactive shell aliases `ls→eza`, `cat→bat`, `find→fd`, `grep→rg`, `top→btop`. In **Bash
-  tool** calls those aliases do **not** apply — call the real binaries by name (`rg`, `fd`,
-  `bat -p`, `eza`), and remember `fd`/`rg` have different syntax than GNU `find`/`grep`.
-- Full environment reference (alias table, installed CLI tools, shell plugins) is the
-  **`shell-environment`** skill — consult it when you need machine details.
+- Interactive-shell aliases (e.g. `ls`/`cat`/`find`/`grep` mapped to modern replacements) do **not**
+  apply in **Bash tool** calls — invoke the real binary by name, and note tools like `fd`/`rg` differ
+  in syntax from GNU `find`/`grep`.
+- Your machine's specifics (aliases, installed tools, paths) live in `CLAUDE.local.md` and the personal
+  **`shell-environment`** skill — fill those in for your environment.
 
 ## Conventions index
 - `rules/python.md` — uv / mise / ruff conventions (auto-loads when touching Python files)

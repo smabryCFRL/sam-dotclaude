@@ -17,6 +17,7 @@ mkdir -p "$CLAUDE_DIR"
 # Ensure personal local files exist (seed from examples) before linking.
 [ -f "$REPO_DIR/CLAUDE.local.md" ]     || cp "$REPO_DIR/CLAUDE.local.md.example"     "$REPO_DIR/CLAUDE.local.md"
 [ -f "$REPO_DIR/settings.local.json" ] || cp "$REPO_DIR/settings.local.json.example" "$REPO_DIR/settings.local.json"
+[ -f "$REPO_DIR/skills/shell-environment/SKILL.md" ] || cp "$REPO_DIR/skills/shell-environment/SKILL.md.example" "$REPO_DIR/skills/shell-environment/SKILL.md"
 
 # Make scripts executable.
 chmod +x "$REPO_DIR"/install.sh "$REPO_DIR"/hooks/*.sh 2>/dev/null || true
