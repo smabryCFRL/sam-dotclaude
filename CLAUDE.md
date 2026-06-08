@@ -30,6 +30,11 @@
 - **Skip** this when I tell you to, or when it's a **third-party repo I cloned** (someone else's
   project): don't add `.claude/` there unless I explicitly ask.
 
+## First run — set up this machine if it's unconfigured
+- If `CLAUDE.local.md` still contains unfilled `<…>` placeholders, this machine isn't personalized
+  yet: offer to run the **`setup`** skill (it interviews the user and fills the personal layer) before
+  substantial work — unless told to skip.
+
 ## Bash tool gotcha
 - Interactive-shell aliases (e.g. `ls`/`cat`/`find`/`grep` mapped to modern replacements) do **not**
   apply in **Bash tool** calls — invoke the real binary by name, and note tools like `fd`/`rg` differ
@@ -42,5 +47,6 @@
 - `rules/git.md` — commit, branch, PR & review conventions
 - `skills/new-python-project` — scaffold a Python project my way
 - `skills/project-init` — drop the `.claude/` template into the current repo
+- `skills/setup` — first-run onboarding: interview the user & fill their personal config layer
 - `skills/shell-environment` — terminal / tooling reference (on demand)
 - `skills/atlas` + `rules/atlas.md` — Claude's own Obsidian vault: proactively recall, capture, link & synthesize (path in `CLAUDE.local.md`)

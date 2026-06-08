@@ -39,6 +39,19 @@ git clone <your-fork-url> dotclaude; cd dotclaude
 The installer symlinks the managed items into `~/.claude/`, backing up anything it replaces to
 `~/.claude/_pre-dotclaude-backup-<timestamp>/`. It's idempotent — re-run any time.
 
+## First-time setup (let your agent do it)
+
+The fastest way to tailor dotclaude is to let Claude set it up for you. After installing, open Claude
+Code and say **"run the dotclaude setup skill"** — it also offers automatically when your personal
+config is still the unfilled template. The `setup` skill **auto-detects what it can** (OS, shell,
+package manager, installed tools, git identity) and **asks you the rest**: where your repos live, your
+primary languages and preferred tooling, your workflow style (plan-first/TDD, auto-format, PR
+conventions), your permissions posture, and whether you want an Obsidian knowledge vault — then writes
+your personal layer for you. A new teammate on Windows just clones, runs `install.ps1`, and tells their
+agent to run setup.
+
+Prefer to do it by hand? The manual reference is below.
+
 ## Personalize
 
 The committed files are **generic best-practice defaults** that work for any user/OS. Your personal
