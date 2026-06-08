@@ -12,7 +12,7 @@ and machine-specific values live in gitignored `*.local.*` files, so the repo it
 ```
 CLAUDE.md                  # lean, always-loaded rules
 rules/                     # python.md (auto-loads on Python files), git.md
-skills/                    # new-python-project, project-init, shell-environment, save-note, recall-note
+skills/                    # new-python-project, project-init, shell-environment, atlas
 hooks/                     # guard (safety), check-project-config (session nudge)   [.sh + .ps1]
 agents/                    # empty to start — built-ins + plugins cover most cases
 templates/project/.claude/ # drop-in starter for any repo
@@ -72,17 +72,18 @@ offers it automatically when a repo has no `.claude/` (it skips third-party repo
 It drops `templates/project/.claude/` in and fills it out. Global rules apply everywhere
 automatically, so project files only hold project-specific guidance.
 
-## Memory vault (Obsidian)
+## Memory vault (Obsidian) — "Atlas"
 
-`save-note` and `recall-note` give Claude a durable, human-browsable knowledge base: frontmatter'd
-markdown files written into an Obsidian vault (plain file I/O — no MCP or service). `save-note` writes
-`<category>/<slug>.md` plus an `INDEX.md` pointer; `recall-note` searches it with ripgrep. Set the
-vault path under **Agent vault** in `CLAUDE.local.md`.
+Atlas is Claude's **own** knowledge workspace — it reads and writes there on its own initiative (no
+manual command needed). `rules/atlas.md` (always-on) tells Claude to recall before substantial work,
+capture notable findings as it goes, link everything with `[[wikilinks]]`, and surface cross-note
+connections; the `atlas` skill is the method (note schema, MOC hubs, synthesis); and a SessionStart
+hook (`hooks/atlas-context.sh`) makes each session start vault-aware (counts + categories only — never
+note titles or bodies). Set the vault path under **Agent vault** in `CLAUDE.local.md`.
 
-This complements native auto-memory (Claude's automatic, machine-local working memory) — the vault is
-the *deliberate, curated, portable* layer you also read in Obsidian, and its backlinks/graph are strong
-for linking decisions, entities, and cases. Keep the vault **non-cloud-synced and sensitive**; never
-commit it.
+Notes are `<category>/<Title>.md` with frontmatter; links resolve by filename (`[[Title]]`). This
+complements native auto-memory (machine-local working memory) — the vault is the *deliberate, curated,
+portable* layer you also browse in Obsidian. Keep it **non-cloud-synced and sensitive**; never commit it.
 
 ## Sharing with colleagues
 

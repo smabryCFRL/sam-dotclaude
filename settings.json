@@ -51,7 +51,8 @@
     "SessionStart": [
       {
         "hooks": [
-          { "type": "command", "command": "bash ~/.claude/hooks/check-project-config.sh", "timeout": 10 }
+          { "type": "command", "command": "bash ~/.claude/hooks/check-project-config.sh", "timeout": 10 },
+          { "type": "command", "command": "bash ~/.claude/hooks/atlas-context.sh", "timeout": 10 }
         ]
       }
     ]
