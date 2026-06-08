@@ -12,6 +12,10 @@
 - Test: <e.g. uv run pytest>
 - Lint / format: uv run ruff check  /  uv run ruff format
 
+## Verify (definition of done)
+- Before claiming done, run `<the command that proves it works — e.g. uv run pytest && uv run ruff check>`
+  and show its output. Don't assert success.
+
 ## Conventions & gotchas
 - <project-specific rules, ports, env vars, things to get right>
 
