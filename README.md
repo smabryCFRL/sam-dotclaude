@@ -85,6 +85,31 @@ If your build doesn't auto-install from `settings.json`, run them manually:
 ```
 > Plugins run with your privileges. Keep to official sources except deliberate exceptions.
 
+## Models & effort
+
+The shared default is **`model: sonnet`** at **`effortLevel: high`** — Sonnet handles the bulk of
+coding at near-Opus quality and is friendly to limited plans. Override it in your **personal**
+`settings.local.json` (gitignored) so the shared default stays safe for the whole team, e.g.:
+
+```json
+{ "model": "opusplan" }
+```
+
+**Model choices** (set `model` in `settings.local.json`, or run `/model <name>` for the session):
+- **`sonnet`** — the default; fast, capable, cost-friendly. Best all-rounder.
+- **`opus`** — deepest reasoning; reserve for hard architecture/bugs (heaviest plan usage).
+- **`opusplan`** — *Opus does the planning, then auto-switches to Sonnet to execute.* Heavy model for
+  the thinking, cheap/fast for the doing — pairs with the plan-first rule. (Needs Opus access on your plan.)
+- **`haiku`** — fastest and cheapest; quick edits and search.
+
+**Effort** — `effortLevel` in settings, or `/effort low|medium|high|xhigh|max` for the session, adjusts
+reasoning depth on the *current* model (it doesn't change the model). `/effort ultracode` turns on
+Opus-4.8 dynamic workflows for big multi-phase jobs.
+
+**Limited Opus plan?** Stay on `sonnet` (the default) and raise `/effort` when you need more depth;
+reach for `/model opus` sparingly on the hardest problems. Note: model changes **don't hot-reload** —
+run `/model` or restart Claude Code to apply a new default.
+
 ## Per-project config
 
 In any repo, ask Claude to run the **`project-init`** skill — and per the global `CLAUDE.md`, Claude
